@@ -23,6 +23,7 @@ export default {
   PrimaryGradientStart:'#1E2542',
   PrimaryGradientEnd:'#16162C',
   headingColor:'#FFF',
+  geryColor: '#CCCCCC',
 
 
 };
