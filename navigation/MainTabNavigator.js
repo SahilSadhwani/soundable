@@ -55,7 +55,7 @@ const SettingsStack = createStackNavigator(
 
 SettingsStack.navigationOptions = {
     tabBarIcon:({focused})=>(
-        <MaterialIcons name={'music-note'} size={responsiveFontSize(4)} color={Colors.accentColor}/>
+        <MaterialIcons name={'person'} size={responsiveFontSize(4)} color={Colors.accentColor}/>
     ),
 };
 
