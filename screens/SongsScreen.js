@@ -8,7 +8,10 @@ import {
   Text,
   TouchableOpacity,
   View,
+    FlatList
 } from 'react-native';
+
+import {Audio} from "expo-av";
 
 import {responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
 
@@ -17,7 +20,7 @@ import {LinearGradient} from "expo-linear-gradient";
 import Colors from "../constants/Colors";
 
 import {getAllSongs} from "../services/SongService";
-import {FlatList} from "react-navigation";
+
 import SongItem from "../components/SongItem";
 import RoundedButton from "../components/RoundedButton"
 import {MaterialIcons} from "@expo/vector-icons";
@@ -25,8 +28,13 @@ import {MaterialIcons} from "@expo/vector-icons";
 export default class SongsScreen extends Component{
     constructor(props){
       super(props);
+      const sound = new Audio.Sound();
       this.state={
-        songs:[]
+        songs:[],
+        isPaused: false,
+        sound: sound,
+        currentSong: undefined,
+        isSongLoading: false,
       };
     }
 
@@ -59,11 +67,59 @@ export default class SongsScreen extends Component{
             <FlatList data={this.state.songs}
                       style={{flex:1}}
                       keyExtractor={(data)=>data.id+""}
-                      renderItem={({item})=> <SongItem song={item}/>}/>
+                      renderItem={({item})=> <SongItem song={item} songClicked={this.playSong.bind(this)}/>}/>
             </LinearGradient>
-            <NowPlaying/>
+              { typeof this.state.currentSong!== 'undefined' ? <NowPlaying isPaused={this.state.isPaused}
+                                                                            song={this.state.currentSong}
+                                                                            onToggle={this.togglePause.bind(this)}/>
+                                                                : null}
           </View>
       );
+    }
+
+
+    async playSong(song){
+
+        console.log(typeof this.state.currentSong);
+        let songLoaded = (typeof this.state.currentSong) !== 'undefined';
+        if(!this.state.isSongLoading &&
+            (!songLoaded || this.state.currentSong.id !== song.id)){
+            this.setState({
+               isSongLoading: true
+            });
+
+            if(songLoaded){
+                await this.state.sound.unloadAsync();
+            }
+            console.log("Loading song");
+            await this.state.sound.loadAsync({uri:song.location},{}, false);
+            console.log("Playing song");
+            await this.state.sound.playAsync();
+            this.setState({
+               currentSong: song,
+                isSongLoading: false
+            });
+        }
+    }
+
+    async togglePause(){
+        console.log("TogglePause called");
+        if(this.state.currentSong){
+            console.log("Going to pause current song: "+this.state.currentSong);
+            let isPaused = !this.state.isPaused;
+            if(isPaused){
+                console.log("Pausing song");
+                await this.state.sound.pauseAsync();
+                console.log("Paused");
+            }else{
+                console.log("Playing song");
+                await this.state.sound.playAsync();
+                console.log("Played");
+            }
+            this.setState({
+                isPaused: isPaused
+            });
+        }
     }
 
 }
