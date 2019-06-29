@@ -3,6 +3,10 @@ import Colors from "./constants/Colors";
 import {StyleSheet} from "react-native";
 
 export const styles= StyleSheet.create({
+    container:{
+        flex: 1,
+        backgroundColor: '#fff',
+    },
     controlContainer:{
         flex:1,
         alignSelf:'stretch',
@@ -27,7 +31,6 @@ export const styles= StyleSheet.create({
     },
     songTitle:{
         fontFamily:'fira-regular',
-        color:Colors.headingColor,
         fontSize: responsiveFontSize(2.3),
         marginBottom:responsiveHeight(0.3),
     },

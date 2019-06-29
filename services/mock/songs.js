@@ -1,6 +1,7 @@
 const SONGS_LIST = [{
     id: 1,
     title: "God's Plan",
+    genre: "Pop",
     thumbnail: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/15/f1/bf/15f1bf30-54b7-e4a1-1a84-02cdc3b1fc2b/source/512x512bb.jpg",
     album: "Album",
     artist: "Drake ft. Someone",
@@ -9,6 +10,7 @@ const SONGS_LIST = [{
 }, {
     id: 2,
     title: "bad guy",
+    genre: "Pop",
     thumbnail: "https://consequenceofsound.net/wp-content/uploads/2019/03/when-we-all-fall-asleep-new-album-release-stream-billie.jpg?quality=80&w=380&h=380&crop=1",
     album: "Album",
     artist: "Billie Eilish",
@@ -17,6 +19,7 @@ const SONGS_LIST = [{
 }, {
     id: 3,
     title: "God's Plan",
+    genre: "Pop",
     thumbnail: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/15/f1/bf/15f1bf30-54b7-e4a1-1a84-02cdc3b1fc2b/source/512x512bb.jpg",
     album: "Album",
     artist: "Drake ft. Someone",
@@ -25,6 +28,7 @@ const SONGS_LIST = [{
 }, {
     id: 4,
     title: "God's Plan",
+    genre: "Pop",
     thumbnail: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/15/f1/bf/15f1bf30-54b7-e4a1-1a84-02cdc3b1fc2b/source/512x512bb.jpg",
     album: "Album",
     artist: "Drake ft. Someone",
@@ -33,6 +37,7 @@ const SONGS_LIST = [{
 }, {
     id: 5,
     title: "God's Plan",
+    genre: "Pop",
     thumbnail: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/15/f1/bf/15f1bf30-54b7-e4a1-1a84-02cdc3b1fc2b/source/512x512bb.jpg",
     album: "Album",
     artist: "Drake ft. Someone",
@@ -41,6 +46,7 @@ const SONGS_LIST = [{
 }, {
     id: 6,
     title: "God's Plan",
+    genre: "Pop",
     thumbnail: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/15/f1/bf/15f1bf30-54b7-e4a1-1a84-02cdc3b1fc2b/source/512x512bb.jpg",
     album: "Album",
     artist: "Drake ft. Someone",
@@ -49,6 +55,7 @@ const SONGS_LIST = [{
 }, {
     id: 7,
     title: "God's Plan",
+    genre: "Pop",
     thumbnail: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/15/f1/bf/15f1bf30-54b7-e4a1-1a84-02cdc3b1fc2b/source/512x512bb.jpg",
     album: "Album",
     artist: "Drake ft. Someone",
@@ -57,6 +64,7 @@ const SONGS_LIST = [{
 }, {
     id: 8,
     title: "God's Plan",
+    genre: "Pop",
     thumbnail: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/15/f1/bf/15f1bf30-54b7-e4a1-1a84-02cdc3b1fc2b/source/512x512bb.jpg",
     album: "Album",
     artist: "Drake ft. Someone",
